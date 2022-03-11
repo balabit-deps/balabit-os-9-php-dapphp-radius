@@ -1,0 +1,27 @@
+php-dapphp-radius (2.5.8-1ubuntu1) jammy; urgency=medium
+
+  * Enable OpenSSL legacy providers during tests. (LP: #1964514)
+    - d/rules: enable legacy providers in dh_auto_test.
+    - d/t/control: enable legacy providers for dep8 tests.
+    - d/t/openssl.conf: add configuration to enable legacy providers.
+
+ -- Athos Ribeiro <athos.ribeiro@canonical.com>  Fri, 11 Mar 2022 11:29:07 -0300
+
+php-dapphp-radius (2.5.8-1) unstable; urgency=medium
+
+  * Fixed upstream URL in d/rules.
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 28 Jan 2022 09:41:19 +0100
+
+php-dapphp-radius (2.5.6-2) unstable; urgency=medium
+
+  * Re-upload source-only.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 25 Jan 2022 10:03:54 +0100
+
+php-dapphp-radius (2.5.6-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #1004291)
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 24 Jan 2022 09:44:14 +0100

@@ -1,0 +1,5 @@
+.phpunit.result.cache
+Dapphp/
+lib/Crypt/CHAP/autoload.php
+src/autoload.php
+vendor/

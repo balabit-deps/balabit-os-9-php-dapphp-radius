@@ -1,0 +1,51 @@
+Source: php-dapphp-radius
+Section: php
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian PHP PEAR Maintainers <pkg-php-pear@lists.alioth.debian.org>
+Uploaders:
+ Thomas Goirand <zigo@debian.org>,
+Build-Depends:
+ debhelper-compat (= 12),
+ openstack-pkg-tools,
+ php-pear,
+ phpab,
+ phpunit,
+ pkg-php-tools,
+Standards-Version: 4.5.0
+Homepage: https://github.com/dapphp/radius/
+Vcs-Git: https://salsa.debian.org/php-team/pear/php-dapphp-radius.git
+Vcs-Browser: https://salsa.debian.org/php-team/pear/php-dapphp-radius
+Rules-Requires-Root: no
+
+Package: php-dapphp-radius
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${phpcomposer:Debian-require},
+ ${phpcomposer:Debian-suggest},
+Recommends:
+ ${phpcomposer:Debian-replace},
+Breaks:
+ ${phpcomposer:Debian-conflict},
+ ${phpcomposer:Debian-replace},
+Provides:
+ ${phpcomposer:Debian-provide},
+Description: pure PHP RADIUS client based on the SysCo/al implementation
+ Dapphp\Radius is a pure PHP RADIUS client for authenticating users against a
+ RADIUS server in PHP. It currently supports basic RADIUS auth using PAP, CHAP
+ (MD5), MSCHAP v1, and EAP-MSCHAP v2. The current 2.5.x branch is tested to
+ work with Microsoft Windows Server 2012 to 2019 Network Policy Server and
+ FreeRADIUS 2 and above.
+ .
+ PAP authentication has been tested on:
+  * Microsoft Radius server IAS
+  * Mideye RADIUS Server
+  * Radl
+  * RSA SecurID
+  * VASCO Middleware 3.0 server
+  * WinRadius
+  * ZyXEL ZyWALL OTP
+ .
+ The PHP openssl extension is required if using MSCHAP v1 or v2. For older PHP
+ versions that have mcrypt without openssl support, then mcrypt is used.

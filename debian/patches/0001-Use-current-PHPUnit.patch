@@ -1,0 +1,21 @@
+From: =?utf-8?q?David_Pr=C3=A9vot?= <taffit@debian.org>
+Date: Mon, 24 Jan 2022 07:53:03 -0400
+Subject: Use current PHPUnit
+
+---
+ tests/ClientTest.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/ClientTest.php b/tests/ClientTest.php
+index 62c3904..3be40da 100644
+--- a/tests/ClientTest.php
++++ b/tests/ClientTest.php
+@@ -5,7 +5,7 @@ use Dapphp\Radius\EAPPacket;
+ use Dapphp\Radius\MsChapV2Packet;
+ use Dapphp\Radius\VendorId;
+ 
+-class ClientTest extends PHPUnit_Framework_TestCase
++class ClientTest extends PHPUnit\Framework\TestCase
+ {
+     public function testAttributes()
+     {

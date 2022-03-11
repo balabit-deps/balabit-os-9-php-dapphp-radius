@@ -1,0 +1,9 @@
+php-dapphp-radius (2.5.8-1ubuntu1) jammy; urgency=medium
+
+  * If using RADIUS auth with the MSCHAP protocol and OpenSSL 3, you will need
+    to enable the OpenSSL legacy provider. This happens because MSCHAP relies
+    on DES, which has been relegated to the legacy provider in OpenSSL 3.
+    See https://wiki.openssl.org/index.php/OpenSSL_3.0#Providers for further
+    informarion.
+
+ -- Athos Ribeiro <athos.ribeiro@canonical.com>  Fri, 11 Mar 2022 11:59:13 -0300

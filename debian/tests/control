@@ -1,0 +1,3 @@
+Test-Command: mkdir -p vendor && cp debian/autoload.php vendor && OPENSSL_CONF=debian/tests/openssl.conf phpunit
+Restrictions: rw-build-tree
+Depends: phpunit, @

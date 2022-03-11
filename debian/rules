@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+UPSTREAM_GIT ?= https://github.com/dapphp/radius/
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+%:
+	dh $@ --with phpcomposer
+
+override_dh_auto_build:
+	phpab --output lib/Crypt/CHAP/autoload.php lib
+	phpab \
+		--template debian/autoload.php.tpl \
+		--output src/autoload.php \
+		src
+	mkdir --parent vendor Dapphp
+	cp debian/autoload.php vendor
+	# Mimic install path for tests
+	ln -s ../src Dapphp/Radius
+
+override_dh_auto_test:
+	# Load OpenSSL legacy providers. The DES algorythm is needed in the MSCHAP tests
+	# https://wiki.openssl.org/index.php/OpenSSL_3.0#Providers
+	OPENSSL_CONF=debian/tests/openssl.conf phpunit --include-path lib
